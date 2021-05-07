@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="kocka.js"></script>
+  <title>Síkidomok és testek</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm container bg-dark justify-content-center">
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="navbar-nav navbar-brand">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Kezdőlap</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="negyzet.html">Négyzet</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="teglalap.html">Téglalap</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="kocka.html">Kocka</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="teglatest.html">Téglatest</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="row mx-auto kartyasor">
+    <div class="card bg-dark col-lg-6">
+
+      <div class="card-body bg-dark text-white">
+        <h4 class="card-title">Felszín számítás</h4>
+        <p class="card-text">Felszín: a határoló felületek területének az összege. Ha a kocka lapjainak területét összeadjuk, akkor a kocka felszínét kapjuk.
+          <br> A felszín jele: A. <br>
+          A = 6 * a * a <br> <br> <br> <br>
+          <img src="Képek/kockafelszín.png" class="card-img-top" alt="Felszín ábra">
+        <form>
+          <h6>Válassz mértékegységet:</h6>
+          <select class="form-control" id="FelszinKockaM">
+            <option value="mm2">Milliméter</option>
+            <option value="cm2" selected>Centiméter</option>
+            <option value="dm2">Deciméter</option>
+            <option value="m2">Méter</option> <br>
+          </select>
+          <label for="felszina">A oldal:</label><br>
+          <input class="form-control" type="number" id="FelszinA" name="felszina" min="0" oninput="FelszinKocka()"><br>
+
+          <label for="felszinkocka">Felszín:</label>
+          <input type="text" class="form-control" id="FelszinKockaA" disabled>
+
+        </form>
+        </p>
+      </div>
+    </div>
+    <div class="card bg-dark col-lg-6">
+
+      <div class="card-body bg-dark text-white">
+        <h4 class="card-title">Térfogat számítás</h4>
+        <p class="card-text">Térfogat: a testek által elfoglalt, azok határai közé zárt tér nagysága. Mértékegysége a köbméter. Megmutatja, hogy mekkora helyet foglal el a térből.<br>A kocka térfogatának megállapításához szükségünk lesz 1 oldalának hosszára. Ha az oldal megvan, utána kiszámíthatjuk a térfogatot: <br>
+          V = a * a * a
+          <img src="Képek/kockatérfogat.png" class="card-img-top" alt="Terület ábra"> <br> <br>
+        <form>
+          <h6>Válassz mértékegységet:</h6>
+          <select class="form-control" id="TerfogatKockaM">
+            <option value="mm3">Milliméter</option>
+            <option value="cm3" selected>Centiméter</option>
+            <option value="dm3">Deciméter</option>
+            <option value="m3">Méter</option> <br>
+          </select>
+          <label for="kockaa">A oldal:</label><br>
+          <input class="form-control" type="number" id="KockaA" min="0" oninput="TerfogatKocka()"><br>
+
+          <label for="terfogatkocka">Térfogat:</label>
+          <input type="text" class="form-control" id="TerfogatKockaA" disabled>
+
+
+        </form>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

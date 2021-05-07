@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css%22%3E">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js%22%3E"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js%22%3E"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js%22%3E"></script>
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="teglalap.js"></script>
+  <title>Síkidomok és testek</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm container bg-dark justify-content-center">
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="navbar-nav navbar-brand">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Kezdőlap</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="negyzet.html">Négyzet</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="teglalap.html">Téglalap</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="kocka.html">Kocka</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="teglatest.html">Téglatest</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <div class="row kartyasor mx-auto">
+    <div class="card bg-dark col-lg-6 col-md-12">
+
+      <div class="card-body bg-dark text-white">
+        <h4 class="card-title">Kerület számítás</h4>
+        <p class="card-text">Kerület: a síkidomot határoló vonalak együttes hossza.<br>A téglalap kerületének megállapításához szükségünk lesz 2 oldalának hosszára. Ha mindkét oldal megvan, utána kiszámíthatjuk a kerületet:<br>
+          K = 2 * (a * b)
+          <img src="Képek/kerület téglap.png" class="card-img-top" alt="Kerület ábra"> <br> <br> 
+        <form>
+          <h6>Válassz mértékegységet:</h6>
+          <select class="form-control" id="MertektTeglalapK">
+            <option value="mm">Milliméter</option>
+            <option value="cm" selected>Centiméter</option>
+            <option value="dm">Deciméter</option>
+            <option value="m">Méter</option> <br> <br>
+          </select>
+          <label for="a_oldal">A oldal:</label><br>
+          <input class="form-control" type="number" id="AOldal" name="a_oldal" min="0" oninput="keruletTeglalap()"><br>
+
+          <label for="b_oldal">B oldal:</label><br>
+          <input class="form-control" type="number" id="BOldal" name="b_oldal" min="0" oninput="KeruletTeglalap()"><br>
+
+          <label for="kerulet">Kerület:</label>
+          <input type="text" class="form-control" id="Kerulet" disabled>
+
+        </form>
+        </p>
+      </div>
+    </div>
+
+    <div class="card bg-dark col-lg-6 col-md-12">
+
+      <div class="card-body bg-dark text-white ">
+        <h4 class="card-title">Terület számítás</h4>
+        <p class="card-text">Terület: megmutatja, hogy mekkora helyet foglal el a síkból.<br>A téglalap területének megállapításához szükségünk lesz 2 oldalának hosszára. Ha mindkét oldal megvan, utána kiszámíthatjuk a területet: <br>
+          T = a * b
+          <img src="Képek/téglalapterület.png" class="card-img-top" alt="Terület ábra"> <br> <br>
+        <form>
+          <h6>Válassz mértékegységet:</h6>
+          <select class="form-control" id="MertektTeglalapT">
+            <option value="mm2">Milliméter</option>
+            <option value="cm2" selected>Centiméter</option>
+            <option value="dm2">Deciméter</option>
+            <option value="m2">Méter</option> <br>
+          </select>
+          <label for="aoldal">A oldal:</label><br>
+          <input class="form-control" type="number" id="AOldalT" name="aoldal" min="0" oninput="TeruletTeglalap()"><br>
+
+          <label for="boldal">B oldal:</label><br>
+          <input class="form-control" type="number" id="BOldalT" name="boldal" min="0" oninput="TeruletTeglalap()"><br>
+
+          <label for="Terulet">Terület:</label>
+          <input type="text" class="form-control" id="Terulet" disabled>
+
+
+        </form>
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

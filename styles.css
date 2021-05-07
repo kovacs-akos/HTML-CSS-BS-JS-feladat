@@ -1,0 +1,45 @@
+body {
+  background-color: aquamarine;
+}
+
+.kep {
+  height: 250px;
+  width: 300px;
+  margin-top: 250px;
+  margin-left: 150px;
+}
+.overlay {
+  opacity: 0;
+}
+.wrapper {
+  font-family: sans-serif;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+}
+.h_img {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: 0.5s ease;
+  padding-top: 50px;
+  transition: all 0.4s ease-in-out;
+}
+.nav-link {
+  color: white;
+}
+.card-columns {
+  margin-top: 40px;
+  margin-left: 425px;
+}
+.szegely {
+  border: solid black 5px;
+}
+.kartyasor {
+  width: 50%;
+  margin-top: 50px;
+}
+.card {
+  border-radius: 1px;
+}

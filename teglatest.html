@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="teglatest.js"></script>
+  <title>Síkidomok és testek</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm container bg-dark justify-content-center">
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="navbar-nav navbar-brand">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Kezdőlap</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="negyzet.html">Négyzet</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="teglalap.html">Téglalap</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="kocka.html">Kocka</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="teglatest.html">Téglatest</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="row mx-auto kartyasor">
+    <div class="card bg-dark col-lg-6">
+
+      <div class="card-body bg-dark text-white">
+        <h4 class="card-title">Felszín számítás</h4>
+        <p class="card-text">Felszín: a határoló felületek területének az összege. Ha a téglatest lapjainak területét összeadjuk, akkor a téglatest felszínét kapjuk.
+          <br> A felszín jele: A. <br>
+          A = 2 * (a * b) + 2 * (a * c) + 2 * (b * c)
+          <img src="Képek/téglatestfelszín.png" class="card-img-top" alt="Térfogat ábra"> <br> <br>
+        <form>
+          <h6>Válassz mértékegységet:</h6>
+          <select class="form-control" id="FelszinTeglaM">
+            <option value="mm3">Milliméter</option>
+            <option value="cm3" selected>Centiméter</option>
+            <option value="dm3">Deciméter</option>
+            <option value="m3">Méter</option> <br>
+          </select>
+          <label for="oldala_">A oldal:</label><br>
+          <input class="form-control" type="number" id="OldalA_" name="oldala_" min="0" oninput="felszinteglatest()"><br>
+
+          <label for="oldalb_">B oldal:</label><br>
+          <input class="form-control" type="number" id="OldalB_" name="oldalb_" min="0" oninput="felszinteglatest()"><br>
+
+          <label for="oldalc_">C oldal:</label><br>
+          <input class="form-control" type="number" id="OldalC_" name="oldalc_" min="0" oninput="felszinteglatest()"><br>
+
+          <label for="felszin">Felszín:</label>
+          <input type="text" class="form-control" id="FelszinT" disabled>
+
+        </form>
+        </p>
+      </div>
+    </div>
+    <div class="card bg-dark col-lg-6">
+
+      <div class="card-body bg-dark text-white">
+        <h4 class="card-title">Térfogat számítás</h4>
+        <p class="card-text">Térfogat: Térfogat: a testek által elfoglalt, azok határai közé zárt tér nagysága. Mértékegysége a köbméter. Megmutatja, hogy mekkora helyet foglal el a térből.<br>A téglatest térfogatának megállapításához szükségünk lesz 3 oldalának hosszára. Ha mindhárom oldal megvan, utána kiszámíthatjuk a térfogatot:<br> <br>
+          V = a * b * c
+          <img src="Képek/téglatesttérfogat.png" class="card-img-top" alt="Térfogat ábra">
+        <form>
+          <h6>Válassz mértékegységet:</h6>
+          <select class="form-control" id="TerfogatTeglaM">
+            <option value="mm2">Milliméter</option>
+            <option value="cm2" selected>Centiméter</option>
+            <option value="d2">Deciméter</option>
+            <option value="m2">Méter</option> <br>
+          </select>
+          <label for="oldala">A oldal:</label><br>
+          <input class="form-control" type="number" id="OldalA" name="oldala" min="0" onchange="terfogatteglatest()"><br>
+
+          <label for="oldalb">B oldal:</label><br>
+          <input class="form-control" type="number" id="OldalB" name="oldalb" min="0" onchange="terfogatteglatest()"><br>
+
+          <label for="oldalc">C oldal:</label><br>
+          <input class="form-control" type="number" id="OldalC" name="oldalc" min="0" onchange="terfogatteglatest()"><br>
+
+          <label for="terfogat">Térfogat:</label>
+          <input type="text" class="form-control" id="TerfogatT" disabled>
+
+
+        </form>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

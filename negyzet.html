@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css%22%3E">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js%22%3E"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js%22%3E"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js%22%3E"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="negyzet.js"></script>
+  <title>Síkidomok és testek</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm container bg-dark justify-content-center">
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="navbar-nav navbar-brand">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Kezdőlap</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="negyzet.html">Négyzet</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="teglalap.html">Téglalap</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="kocka.html">Kocka</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="teglatest.html">Téglatest</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="row mx-auto kartyasor" >
+    <div class="card bg-dark col-lg-6">
+      <div class="card-body bg-dark text-white">
+        <h4 class="card-title">Kerület számítás</h4>
+        <p class="card-text">Kerület: a síkidomot határoló vonalak együttes hossza.<br>A négyzet kerületének megállapításához szükségünk lesz az oldalának hosszára. Ha mindkét oldal megvan, utána kiszámíthatjuk a kerületet:<br>
+          K = 4 * a
+          <img src="Képek/négyzetkerület.png" class="card-img-top" alt="Kerület ábra"> <br> <br> 
+        <form>
+          <h6>Válassz mértékegységet:</h6>
+          <select class="form-control" id="MertekNegyzetK" onchange="KeruletNegyzet()">
+            <option value="mm">Milliméter</option>
+            <option value="cm" selected>Centiméter</option>
+            <option value="dm">Deciméter</option>
+            <option value="m">Méter</option> <br>
+          </select>
+          <label for="ANegyzetK">A oldal:</label><br>
+          <input class="form-control" type="number" id="ANegyzetK" min="0" oninput="KeruletNegyzet()"><br>
+
+          <label for="KeruletNegyzett">Kerület:</label>
+          <input type="text" class="form-control" id="KeruletNegyzett" disabled>
+
+        </form>
+        </p>
+      </div>
+
+    </div>
+
+    <div class="card bg-dark col-lg-6">
+      <div class="card-body bg-dark text-white">
+        <h4 class="card-title">Terület számítás</h4>
+        <p class="card-text">Terület: megmutatja, hogy mekkora helyet foglal el a síkból.<br>A négyzet területének megállapításához szükségünk lesz az oldalának hosszára. Ha megvan az oldal hossza, utána kiszámíthatjuk a területet: <br>
+          T = a * a
+          <img src="Képek/területnégyzet.png" class="card-img-top" alt="Terület ábra"> <br><br>
+        <form>
+          <h6>Válassz mértékegységet:</h6>
+          <select class="form-control" id="MertekNegyzett">
+            <option value="mm2">Milliméter</option>
+            <option value="cm2" selected>Centiméter</option>
+            <option value="dm2">Deciméter</option>
+            <option value="m2">Méter</option> <br>
+          </select>
+          <label for="anegyzett">A oldal:</label><br>
+          <input class="form-control" type="number" id="ANegyzett" name="anegyzett" min="0" oninput="TeruletNegyzet()"><br>
+
+
+
+          <label for="TeruletNegyzett">Terület:</label>
+          <input type="text" class="form-control" id="TeruletNegyzett" disabled>
+
+
+        </form>
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
